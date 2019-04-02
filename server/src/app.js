@@ -5,9 +5,10 @@ const morgan = require('morgan')
 
 const app = express()
 app.use(morgan('combined'))
+app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
-app.use('/api', require('../routes/api/user'))
+app.use('/api/user', require('../routes/api/user'))
 
 const port = process.env.PORT || 8085
 

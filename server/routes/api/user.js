@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 
-router.get('/account', (req, res) => {
+router.post('/register', (req, res) => {
   res.send({
-    message: 'hello world'
+    message: 'Registering user: ' + req.body.email
   })
 })
 
